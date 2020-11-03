@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/boot.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <style type="text/css"></style>
+</head>
+<body>
+{% include "header.html" %}
+<div class="container-fluid">
+    <h4 class="text-danger">{{ msg }}</h4>
+    <table class="container" border="4">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Admission</th>
+            <th scope="col">Name</th>
+            <th scope="col">Password</th>
+            <th scope="col">Email</th>
+            <th scope="col">Class</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in rows %}
+        <tr class="table-grey">
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[6] }}</td>
+            <td>{{ row[7] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<hr>
+{% include "footer.html" %}
+</body>
+</html>

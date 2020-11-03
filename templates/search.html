@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SEARCH</title>
+</head>
+<body>
+{% include "header.html" %}
+<center><h1>Search Below Using Admission Number</h1></center>
+     <div class="container bg-info"><br><br>
+<div class="row ">
+    <div class="col-md-6">
+        <h1>Search Student </h1>
+
+    </div>
+    <div class="col-md-6">
+        <form action="/search" method="post">
+            <label>Enter Admission Number:</label><input type="text" name="admission"><br><br>
+            <a href="view_checkin"><input type="submit" value="Search" class="btn btn-danger"></a><br><br>
+            <div class="alert alert-danger">
+                {{ msg }}
+            </div>
+        </form>
+    </div>
+</div>
+
+<br>
+
+</div>
+
+<table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">phone</th>
+                    <th scope="col">nationality</th>
+                    <th scope="col">address</th>
+                    <th scope="col">checkin_date</th>
+                    <th scope="col">checkin_time</th>
+                    <th scope="col">roomno</th>
+                    <th scope="col">checkout_date</th>
+                    <th scope="col">checkout_time</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                {% if rows %}
+                <td>{{ rows[0][0] }}</td>
+                <td>{{ rows[0][1] }}</td>
+                <td>{{ rows[0][2] }}</td>
+                <td>{{ rows[0][3] }}</td>
+                <td>{{ rows[0][4] }}</td>
+                <td>{{ rows[0][5] }}</td>
+                <td>{{ rows[0][6] }}</td>
+                <td>{{ rows[0][7] }}</td>
+                <td>{{ rows[0][8] }}</td>
+                <td>{{ rows[0][9] }}</td>
+                {% endif %}
+            </tr>
+            </tbody>
+
+</table>
+</div>
+{% include "footer.html" %}
+</body>
+</html>

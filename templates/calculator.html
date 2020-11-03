@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/boot.js"></script>
+	<script type="text/javascript" src="js/popper.js"></script>
+    <style type="text/css">
+        form{
+              alignment: center;
+        }
+    </style>
+
+</head>
+<body>
+{% include "header.html" %}
+<center>
+    <div class="row">
+        <div class="col-md-6">
+
+
+        </div>
+
+    </div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Marks Entry</h3>
+                 <form action="/search" method="post" enctype="multipart/form-data">
+                <input type="number" name="admission"  placeholder="search student">
+                <input type="submit" value="search" name="search">
+            </form>
+
+                <form class="btn btn-info" method="post" action="/Calculation">
+                    <fieldset>
+
+                        <hr><center><img src="images/1.jpg" width="500PX" height="100px"></center><br><hr>
+                        {{msg}}
+
+                        <div class="form-row">
+                            <div class="col-md-6 mb-2">
+
+                                <label for="validationCustom01">Fullname</label>
+
+                                <input type="text" class="form-control" id="validationCustom01" name="fullname"  value="{% for item in data %}
+                {{ item[1] }}{% endfor %}" placeholder="Enter fullname" required>
+
+
+                                <div class="valid-feedback">Looks good!</div>
+                            </div>
+
+                            <div class="col-md-6 mb-2">
+                                <label for="validationCustom02">Class</label>
+
+                                <input type="text" class="form-control" id="validationCustom02" name="fullname"  value="{% for item in data %}
+                {{ item[4] }}{% endfor %}" placeholder="Enter fullname" required>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-2">
+                                <label for="validationCustom03">Admission Number</label>
+                                <input type="text" class="form-control" id="validationCustom03" name="admission"  value="{% for item in data %}{{ item[0] }}{% endfor %}" placeholder="Enter your Admission number" required>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div>
+                            <div class="col-md-6 mb-6">
+                                <label for="validationCustom02">Gender</label>
+                                <input type="text" class="form-control" id="" name="fullname"  value="{% for item in data %}{{ item[6] }}{% endfor %}" placeholder="Enter fullname" required>
+                                <div class="valid-feedback">Looks good!</div>
+
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <hr>
+         <fieldset>
+ <label>Mathematics:</label><input type="number" name="mathematics" placeholder="Maths score"><br><br>
+ <label>English:</label><input type="number" name="english" placeholder="Eng score"><br><br>
+ <label>Kiswahili:</label><input type="number" name="kiswahili" placeholder="Kisw score"><br><br>
+ <label>Science:</label><input type="number" name="science" placeholder="Sci score"><br><br>
+ <label>SST$CRE:</label><input type="number" name="social" placeholder="SST score"><br><br><hr>
+<!--             <label><b>TOTAL {{ marks }}</b></label>-->
+             <center><input type="submit" name="submit" class="btn btn-success col-md-6" value="submit"></center><hr>
+         </fieldset><br><br>
+     </form>
+
+            </div>
+        </div>
+    </div>
+
+
+     <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Entry Status</h5>
+                <div class="alert alert-success">
+                    {{ msg }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</center>
+{% include "footer.html" %}
+</body>
+</html>

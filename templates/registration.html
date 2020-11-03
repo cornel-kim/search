@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/boot.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <style type="text/css"></style>
+</head>
+<body>
+{% include "header.html" %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Registration Details</h5>
+                <form class="btn btn-info" name="registration" method="POST" action="/" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom01">Admission Number</label>
+                      <input type="number" class="form-control" id="validationCustom01" name="admission" placeholder="Enter your Admission number" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom02">Fullname</label>
+                      <input type="text" class="form-control" id="validationCustom02" name="fullname" placeholder="Enter fullname" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                    <hr>
+                <br><br>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom01">Password</label>
+                      <input type="password" class="form-control" id="validationCustom03" name="password" placeholder="Enter your Password" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom02">Email Address</label>
+                      <input type="email" class="form-control" id="validationCustom04" name="email" placeholder="Enter your email address" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                    <hr>
+                <br><br>
+                <div class="form-row">
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom01">Class</label>
+
+                        <select class="form-control" id="validationCustom05" name="standard" required>
+                            <option value="Class One">Class One</option>
+                            <option value="Class Two">Class Two</option>
+                            <option value="Class Three">Class Three</option>
+                            <option value="Class Four">Class Four</option>
+                            <option value="Class Five">Class Five</option>
+                            <option value="Class Six">Class Six</option>
+                            <option value="Class Seven">Class Seven</option>
+                            <option value="Class Eight">Class Eight</option>
+                        </select>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                      <label for="validationCustom02">Phone Number</label>
+                      <input type="tel" class="form-control" id="validationCustom06" name="phone" placeholder="Your mobile number" required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div><br><br><hr>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-6">
+                            <label for="validationCustom02">Gender</label>
+                             <select  class="form-control" name="gender">>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Custom">Custom</option>
+                            </select>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="col-md-6 mb-6">
+                      <label for="validationCustom02">Age</label>
+                      <input type="number" class="form-control" id="validationCustom08" name="age" placeholder="Your age" required>
+                      <div class="valid-feedback">Looks good!</div>
+                        </div>
+                    </div>
+                    <div class=" " style="margin_top: 20px">
+                        <label>Username</label>
+                        <input type="text" class="form-control" name="username" placeholder="Enter Username" required>
+                    </div>
+                    <div class=" " style="margin-top: 20px;">
+                        <label>Upload image</label>
+                      <input type="file" class="form-control" id="" name="file"  required>
+                      <div class="valid-feedback">Looks good!</div>
+                    </div>
+                <br><br>
+                <center><input type="submit" name="submit" class="btn btn-success col-md-6" value="Register"></center><br>
+            <div>
+     <a href="login"><input type="button" value="Click here to login" class="btn btn-secondary col-md-4"></a><br><br>
+                </div>
+        </form>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Registration status</h5>
+                <div class="alert alert-success">
+                    {{ msg }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+{% include "footer.html" %}
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/boot.js"></script>
+    <script type="text/javascript" src="js/popper.js"></script>
+    <style type="text/css"></style>
+</head>
+<body>
+{% include "header.html" %}
+<div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title">Login Details</h5>
+                <form class="card bg-info" method="post" action="/login">
+        <div class="form-row">
+            <div class="col-md-6 mb-1">
+                <label>Username</label>
+              <input type="text" class="form-control" name="username" placeholder="Enter Username"  required>
+<!--              <div class="valid-feedback">Looks good!</div>-->
+            </div>
+            <br><br>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 mb-1">
+                <label for="validationCustom02">Password</label>
+              <input type="password" class="form-control" id="validationCustom02" name="password" placeholder="Enter your Password" required>
+<!--              <div class="valid-feedback">Looks good!</div>-->
+            </div>
+        </div>
+           <br><br>
+        <input type="submit" name="login" class="btn btn-primary col-md-4" value="Log In">
+                    <center>
+                        <p><i>Doesn't have an account?</i></p>
+     <a href="/"><input type="button" value="Register here" class="btn btn-danger col-md-4"></a><br><br>
+                </center>
+    </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Log In Status</h5>
+                <div class="alert alert-info">
+                    {{ error_msg }}
+                </div>
+                <div class="alert alert-warning">
+                    {{ acc_error }}
+                </div>
+                <div class="alert alert-danger">
+                    {{ error }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+{% include "footer.html" %}
+</body>
+</html>
